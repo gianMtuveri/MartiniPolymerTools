@@ -47,9 +47,9 @@ Calculates and visualizes both the net radial charge density and the electrostat
 The script numerically solves the Poisson equation in spherical symmetry to obtain the electrostatic potential profile from the charge density:
 
 The Poisson equation in spherical symmetry is:
-$$
+$
 \frac{1}{r^2} \frac{d}{dr} \left( r^2 \frac{d\phi}{dr} \right) = -\frac{\rho(r)}{\epsilon_0}
-$$
+$
 
 where  
 - $\phi(r)$ is the electrostatic potential,  
@@ -57,26 +57,26 @@ where
 - $\epsilon_0$ is the vacuum permittivity.
 
 The radial electric field:
-$$
+$
 E(r) = -\frac{d\phi}{dr}
-$$
+$
 
 Numerical solution (integration steps):
 
 First integration (charge to field):
-$$
+$
 E(r) = \frac{1}{\epsilon_0 r^2} \int_0^r \rho(r') r'^2 dr'
-$$
+$
 
 Second integration (field to potential):
-$$
+$
 \phi(r) = -\int_0^r E(r') dr'
-$$
+$
 
 The zeta potential at the slip plane:
-$$
+$
 \zeta = \phi(r_\mathrm{slip})
-$$
+$
 
 **Usage:**
 - Edit the file paths as in the previous script.
