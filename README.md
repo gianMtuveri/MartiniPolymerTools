@@ -47,9 +47,9 @@ Calculates and visualizes both the net radial charge density and the electrostat
 The script numerically solves the Poisson equation in spherical symmetry to obtain the electrostatic potential profile from the charge density:
 
 #### 1. **Spherical Poisson Equation:**
-\[
+\begin{equation}
 \frac{1}{r^2} \frac{d}{dr} \left( r^2 \frac{d\phi}{dr} \right) = -\frac{\rho(r)}{\epsilon_0}
-\]
+\end{equation}
 
 where  
 - \(\phi(r)\) is the electrostatic potential,  
