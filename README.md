@@ -55,26 +55,18 @@ where
 - $\epsilon_0$ is the vacuum permittivity.
 
 The radial electric field:
-$
-E(r) = -\frac{d\phi}{dr}
-$
+$E(r) = -\frac{d\phi}{dr}$
 
 Numerical solution (integration steps):
 
 First integration (charge to field):
-$
-E(r) = \frac{1}{\epsilon_0 r^2} \int_0^r \rho(r') r'^2 dr'
-$
+$E(r) = \frac{1}{\epsilon_0 r^2} \int_0^r \rho(r') r'^2 dr'$
 
 Second integration (field to potential):
-$
-\phi(r) = -\int_0^r E(r') dr'
-$
+$\phi(r) = -\int_0^r E(r') dr'$
 
 The zeta potential at the slip plane:
-$
-\zeta = \phi(r_\mathrm{slip})
-$
+$\zeta = \phi(r_\mathrm{slip})$
 
 **Usage:**
 - Edit the file paths as in the previous script.
