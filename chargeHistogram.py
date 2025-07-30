@@ -1,20 +1,17 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from MDAnalysis import Universe
-from scipy.constants import epsilon_0, elementary_charge as e_charge
+from scipy.constants import elementary_charge as e_charge
 from tqdm import tqdm
 import matplotlib.colors as mcolors
-import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 
-colors = cm.get_cmap("tab10").colors  # returns a list of RGBA tuples
-
 # === Load universe ===
-print("Loding trajectory ...")
-u = mda.Universe("/path/to/file", "/path/to/file")
+print("Loading trajectory ...")
+u = Universe("/path/to/topology", "/path/to/trajectory")
 print("Universe loaded")
 np_core = u.select_atoms("resname PLA PLN")       # nanoparticle core
-charged_species = ["PLN","NA+", "CL-"]  # Add all your charged atom names here
+charged_species = ["PLN", "NA+", "CL-"]           # Add all your charged atom names here
 
 # === Parameters ===
 n_bins = 300
@@ -47,9 +44,7 @@ for name in hist_data:
     hist_data[name] /= shell_volumes  # to get charge density (C/m³)
 
 # === Plotting ===
-# === Plot results ===
 fig, ax1 = plt.subplots(figsize=(30, 18))
-
 plt.rcParams.update({
     "axes.labelweight": "bold",
     "axes.labelsize": 45,
@@ -58,7 +53,6 @@ plt.rcParams.update({
     "axes.titlesize": 50,
     #"axes.titleweight": "bold"
 })
-
 
 colors = cm.get_cmap("tab10").colors
 width = (r_edges[1] - r_edges[0]) * 1e9  # bin width in nm
@@ -82,5 +76,5 @@ plt.title("Radial Charge Density", fontsize=65)
 plt.grid(True)
 plt.legend(fontsize=50)
 plt.tight_layout()
-plt.savefig("path/to/image/charge_histograms.png", dpi=300)
+plt.savefig("charge_histograms.png", dpi=300)
 plt.show()
