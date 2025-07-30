@@ -42,43 +42,41 @@ Calculates and visualizes both the net radial charge density and the electrostat
 - Plots both ρ(r) and ϕ(r) on the same graph with dual y-axes.
 - Calculates and prints the zeta potential at a user-specified radius.
 
-**Equations Used:**
+## Equations Used
 
 The script numerically solves the Poisson equation in spherical symmetry to obtain the electrostatic potential profile from the charge density:
 
-#### 1. **Spherical Poisson Equation:**
-\begin{equation}
+The Poisson equation in spherical symmetry is:
+$$
 \frac{1}{r^2} \frac{d}{dr} \left( r^2 \frac{d\phi}{dr} \right) = -\frac{\rho(r)}{\epsilon_0}
-\end{equation}
+$$
 
 where  
-- \(\phi(r)\) is the electrostatic potential,  
-- \(\rho(r)\) is the charge density,  
-- \(\epsilon_0\) is the vacuum permittivity.
+- $\phi(r)$ is the electrostatic potential,  
+- $\rho(r)$ is the charge density,  
+- $\epsilon_0$ is the vacuum permittivity.
 
-#### 2. **Electric Field (Radial):**
-\[
+The radial electric field:
+$$
 E(r) = -\frac{d\phi}{dr}
-\]
+$$
 
-#### 3. **Numerical Solution (Integration Steps):**
-The solution is obtained by integrating outward from the center:
-- **First Integration (Charge to Field):**
-  \[
-  E(r) = \frac{1}{\epsilon_0 r^2} \int_0^r \rho(r') r'^2 dr'
-  \]
-- **Second Integration (Field to Potential):**
-  \[
-  \phi(r) = -\int_0^r E(r') dr'
-  \]
+Numerical solution (integration steps):
 
-This is implemented using cumulative numerical integration (`cumtrapz` from SciPy).
+First integration (charge to field):
+$$
+E(r) = \frac{1}{\epsilon_0 r^2} \int_0^r \rho(r') r'^2 dr'
+$$
 
-#### 4. **Zeta Potential:**
-The zeta potential is defined as the electrostatic potential at the slip plane radius \( r_{\mathrm{slip}} \):
-\[
-\zeta = \phi(r_{\mathrm{slip}})
-\]
+Second integration (field to potential):
+$$
+\phi(r) = -\int_0^r E(r') dr'
+$$
+
+The zeta potential at the slip plane:
+$$
+\zeta = \phi(r_\mathrm{slip})
+$$
 
 **Usage:**
 - Edit the file paths as in the previous script.
