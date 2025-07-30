@@ -84,4 +84,3 @@ plt.show()
 slip_radius_nm = 6
 idx_slip = np.argmin(np.abs(r_centers - slip_radius_nm * 1e-9))
 zeta_potential_mv = phi_r[idx_slip] * 1e3
-print(f"Zeta potential at {slip_radius_nm:.2f} nm: {zeta_potential_mv:.2f} mV")
