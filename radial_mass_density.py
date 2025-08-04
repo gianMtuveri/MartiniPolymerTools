@@ -97,13 +97,13 @@ plt.grid(True, linestyle='--', linewidth=0.5, alpha=0.7)
 plt.tight_layout()
 
 # Save and show
-plt.savefig("pull/radial_density_profile_styled.png", dpi=300)
+plt.savefig("radial_density_profile_styled.png", dpi=300)
 
 # Stack data column-wise: radius | PEO | PLA | water
 data = np.column_stack((bin_centers, peo_density, pla_density, wat_density))
 
 # Save to file
-np.savetxt("pull/density_profiles.txt", data,
+np.savetxt("density_profiles.txt", data,
            header="Distance(nm)    PEO_density(g/cm^3)    PLA_density(g/cm^3)    PW_density(g/cm^3)",
            fmt="%.5f")
 plt.show()
