@@ -28,8 +28,8 @@ Calculates and visualizes the **radial mass density profiles** for different spe
    python radial_mass_density.py
    ```
 3. Output files:
-   - `pull/radial_mass_density_profile.png`: Plot of radial mass densities.
-   - `pull/mass_density_profiles.txt`: Numerical density profile data.
+   - `radial_mass_density_profile.png`: Plot of radial mass densities.
+   - `mass_density_profiles.txt`: Numerical density profile data.
    - `radiusGyr_hist.png`: Histogram plot of Rg.
    - `rg_values.txt`: Numerical values of Rg.
 
